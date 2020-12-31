@@ -203,6 +203,7 @@ static void setclientstate(Client *c, long state);
 static void setfocus(Client *c);
 static void setfullscreen(Client *c, int fullscreen);
 static void setlayout(const Arg *arg);
+static void tooglelayout(const Arg *arg);
 static void setmfact(const Arg *arg);
 static void setup(void);
 static void seturgent(Client *c, int urg);
@@ -1593,6 +1594,16 @@ setlayout(const Arg *arg)
 		arrange(selmon);
 	else
 		drawbar(selmon);
+}
+
+void
+tooglelayout(const Arg *arg)
+{
+    /* Get current layout mode */
+    int currentlt = selmon->sellt;
+    /* Switch from tiled to monocle */
+    currentlt = (currentlt == 0) ? 2 : 0;
+    setlayout(&((Arg) { .v = &layouts[currentlt] }));
 }
 
 /* arg > 1.0 will set mfact absolutely */
