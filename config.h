@@ -7,6 +7,8 @@ static const unsigned int gappy     = 2;        /* vertical gaps between windows
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int horizpadbar        = 1;        /* horizontal padding for statusbar */
+static const int vertpadbar         = 6;        /* vertical padding for statusbar */
 static const int focusonwheel       = 0;
 static const char *fonts[]          = { "UbuntuNerdFontComplete:size=14", "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
