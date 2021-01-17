@@ -14,6 +14,21 @@ while true; do
         status+="  $wifi_status"
     fi
 
+    # Battery level
+    battery_level="$(cat /sys/class/power_supply/BAT0/capacity)"
+    if [ $battery_level -gt 90 ]; then
+        battery_icon=""
+    elif [ $battery_level -gt 75 ]; then
+        battery_icon=""
+    elif [ $battery_level -gt 50 ]; then
+        battery_icon=""
+    elif [ $battery_level -gt 25 ]; then
+        battery_icon=""
+    else
+        battery_icon=""
+    fi
+    status+=" $battery_icon $battery_level%"
+
     # Date
     status+="  $(date '+%a %d %b')"
 
