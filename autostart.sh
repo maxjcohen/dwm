@@ -29,6 +29,22 @@ while true; do
     fi
     status+=" $battery_icon $battery_level%"
 
+    # Volume level
+    volume_level="$(pulsemixer --get-volume | cut -d' ' -f1)"
+    if [ $volume_level -gt 66 ]; then
+        volume_icon=""
+    elif [ $volume_level -gt 33 ]; then
+        volume_icon=""
+    else
+        volume_icon=""
+    fi
+
+    if [ $(pulsemixer --get-mute) -eq 1 ]; then
+        volume_icon=""
+    fi
+
+    status+=" $volume_icon"
+
     # Date
     status+="  $(date '+%a %d %b')"
 
