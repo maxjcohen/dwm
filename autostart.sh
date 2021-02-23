@@ -60,3 +60,4 @@ done &
 
 # Restore background image
 nitrogen --restore &
+redshift -l 48.51:2.20 &
