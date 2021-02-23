@@ -16,7 +16,9 @@ while true; do
 
     # Battery level
     battery_level="$(cat /sys/class/power_supply/BAT0/capacity)"
-    if [ $battery_level -gt 90 ]; then
+    if [ $(cat /sys/class/power_supply/BAT0/status) = "Charging" ]; then
+        battery_icon=""
+    elif [ $battery_level -gt 90 ]; then
         battery_icon=""
     elif [ $battery_level -gt 75 ]; then
         battery_icon=""
