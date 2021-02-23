@@ -55,7 +55,7 @@ while true; do
 
 
     xsetroot -name "$status"
-    sleep 1
+    sleep 10
 done &
 
 # Restore background image
