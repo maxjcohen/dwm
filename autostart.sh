@@ -45,7 +45,7 @@ while true; do
         volume_icon=""
     fi
 
-    status+=" $volume_icon"
+    status+=" $volume_icon $volume_level%"
 
     # Date
     status+="  $(date '+%a %d %b')"
